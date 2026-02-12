@@ -1,4 +1,5 @@
 import Workout from "./components/Workout";
+import Level from "./components/Level";
 
 export default function Home() {
   const exercises = [
@@ -14,6 +15,8 @@ export default function Home() {
         </h1>
 
         <Workout name="Chest Day" exercises={exercises} />
+
+        <Level />
        
       </div>
   );
