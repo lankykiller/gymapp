@@ -3,17 +3,14 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 
-export default function Level() {
-
-    const level = 10;
-    const percentage = 80;
-
+export default function Level(level: number, percentage: number, harka: string) {
 
     return (
         <div style={{ width: 200, height: 200 }}>
             <CircularProgressbar
                 value={percentage}
                 text={`MaxHarka ${level}`}
+                //text={{harka} {level}}
                 styles={buildStyles({
 
                     textSize: '12px',
