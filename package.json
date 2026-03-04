@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^7.3.8",
+    "mongoose": "^9.2.3",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-circular-progressbar": "^2.2.0",
