@@ -2,8 +2,14 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
+type LevelProps = {
+  level: number;
+  percentage: number;
+  harka: string;
+};
 
-export default function Level(level: number, percentage: number, harka: string) {
+
+export default function Level({level, percentage, harka} :LevelProps) {
 
     return (
         <div style={{ width: 200, height: 200 }}>

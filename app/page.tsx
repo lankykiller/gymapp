@@ -16,7 +16,7 @@ export default function Home() {
 
         <Workout name="Chest Day" exercises={exercises} />
 
-        <Level />
+        <Level level={10} percentage={70}  harka="some" />
        
       </div>
   );

@@ -1,19 +1,19 @@
-import { Schema } from "mongoose";
 const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema({
   username: { type: String, required: true },
   level: { type: Number, default: 1 },
-  workouts: [{ type: Schema.Types.ObjectId, ref: "Workout" }],
+  passwordHash: {type: String},
+  workouts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Workout" }],
 }, { timestamps: true });
 
 UserSchema.set('toJSON', {
-  transform: (document: any, returnedObject: any) => {
+  transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
-    //delete returnedObject._id
-    //delete returnedObject.__v
-    // the passwordHash should not be revealed
-    delete returnedObject.passwordHash
+    delete returnedObject._id
+    delete returnedObject.__v
+    //the passwordHash should not be revealed
+    //delete returnedObject.passwordHash
   }
 })
 
