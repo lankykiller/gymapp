@@ -1,6 +1,8 @@
+
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const config = require('./utils/config')
 const usersRouter = require('./users/route')
 const workoutRouter = require('./workouts/route')
@@ -8,7 +10,9 @@ const workoutRouter = require('./workouts/route')
 
 const app = express()
 
+
 app.use(express.json())
+app.use(cors())
 
 mongoose.connect(config.MONGODB_URI)
   .then(() => console.log('connected to mongodb'))

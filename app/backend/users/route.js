@@ -20,9 +20,28 @@ usersRouter.post('/', async (req, res) => {
   res.status(201).json(savedUser)
 })
 
-usersRouter.get('/', async (req, res) => {
+usersRouter.get('/all', async (req, res) => {
   const users = await User.find({}).populate('workouts');
   res.json(users);
+});
+
+
+usersRouter.get('/:userId', async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const user = await User
+      .findById(userId)
+      .populate('workouts');
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch user" });
+  }
 });
 
 module.exports = usersRouter

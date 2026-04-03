@@ -9,11 +9,12 @@ interface Exercise {
 }
 
 interface WorkoutProps {
+  id : string,
   name?: string;
   exercises: Exercise[];
 }
 
-export default function Workout({ name, exercises }: WorkoutProps) {
+export default function Workout({id, name, exercises }: WorkoutProps) {
  /* const exercises = [
     { name: "Bench", sets: [{ kg: 80, reps: 6 }, { kg: 75, reps: 8 }] },
     { name: "Squat", sets: [{ kg: 100, reps: 10 }, { kg: 95, reps: 8 }] },
