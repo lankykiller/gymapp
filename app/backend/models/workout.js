@@ -5,7 +5,7 @@ const ExerciseSchema = new mongoose.Schema({
   sets: [
     {
       reps: Number,
-      weight: Number,
+      kg: Number,
     },
   ],
 })

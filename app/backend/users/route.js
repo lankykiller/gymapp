@@ -4,13 +4,14 @@ const User = require('../models/user')
 require('../models/workout')
 
 usersRouter.post('/', async (req, res) => {
-  const { username, password } = req.body
+  const { username, password, level } = req.body
 
   const saltRounds = 10
   const passwordHash = await bcrypt.hash(password, saltRounds)
 
   const user = new User({
     username,
+    level,
     passwordHash,
   })
 
